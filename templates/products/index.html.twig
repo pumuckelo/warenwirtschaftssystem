@@ -5,8 +5,8 @@
 
 {% block body %}
     <h1>Produkte</h1>
-    <a class="btn btn-primary mt-2 mb-2" href="{{ path('product_new') }}">Produkt hinzufügen</a>
     {% if products %}
+        <a class="btn btn-primary mt-2 mb-2" href="{{ path('product_new') }}">Produkt hinzufügen</a>
         <table class="table table-striped">
             <thead>
             <tr>
@@ -28,8 +28,9 @@
             </tbody>
         </table>
     {% else %}
-        <p>Fuegen Sie ihr erstes Produkt hinzu!</p> <a href="/products/new">
-        <button class="btn btn-primary">Neu</button>
-    </a>
+        <p >Sie haben noch kein Produkt, fügen Sie ihr erstes Produkt hinzu.</p>
+        <a href="/products/new">
+            <button class="btn btn-primary">Hinzufügen</button>
+        </a>
     {% endif %}
 {% endblock body %}

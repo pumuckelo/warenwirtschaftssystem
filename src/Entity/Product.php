@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -26,6 +28,16 @@ class Product
      */
     private $quantity;
 
+
+    /**
+     * @ORM\OneToMany(targetEntity="IncomingDelivery", mappedBy="product")
+     */
+    private $incomingDeliveries;
+
+    public function __construct()
+    {
+        $this->incomingDeliveries = new ArrayCollection();
+    }
 
     //Getter Functions and Setter Functions
 
@@ -53,5 +65,36 @@ class Product
 
     public function setQuantity(int $quantity){
         $this->quantity = $quantity;
+    }
+
+    /**
+     * @return Collection|IncomingDelivery[]
+     */
+    public function getIncomingDeliveries(): Collection
+    {
+        return $this->incomingDeliveries;
+    }
+
+    public function addIncomingDelivery(IncomingDelivery $incomingDelivery): self
+    {
+        if (!$this->incomingDeliveries->contains($incomingDelivery)) {
+            $this->incomingDeliveries[] = $incomingDelivery;
+            $incomingDelivery->setProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeIncomingDelivery(IncomingDelivery $incomingDelivery): self
+    {
+        if ($this->incomingDeliveries->contains($incomingDelivery)) {
+            $this->incomingDeliveries->removeElement($incomingDelivery);
+            // set the owning side to null (unless already changed)
+            if ($incomingDelivery->getProduct() === $this) {
+                $incomingDelivery->setProduct(null);
+            }
+        }
+
+        return $this;
     }
 }
