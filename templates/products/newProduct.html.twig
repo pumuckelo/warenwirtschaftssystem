@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block title %}New Product{% endblock title %}
+{% block body %}
+    <h2>Neues Produkt hinzufügen</h2>
+    {{ form_start(form) }}
+{#    {{ form_widget(form) }}#}
+    {{ form_row(form.name) }}
+    {{ form_row(form.quantity) }}
+    <div class="d-flex justify-content-between mt-2">
+        <a class="btn btn-outline-primary" href="/">Zurück</a>
+        {{ form_row(form.save) }}
+    </div>
+    {{ form_end(form) }}
+{% endblock body %}

@@ -4,7 +4,8 @@
 
 
 {% block body %}
-    <h1>Products</h1>
+    <h1>Produkte</h1>
+    <a class="btn btn-primary mt-2 mb-2" href="{{ path('product_new') }}">Produkt hinzufügen</a>
     {% if products %}
         <table class="table table-striped">
             <thead>
@@ -18,10 +19,10 @@
             <tbody>
             {% for product in products %}
                 <tr>
-                    <td>{{ product }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.quantity }}</td>
                     <td></td>
-                    <td></td>
-                    <td><a href="/products/1" class="btn btn-dark btn-sm">Mehr</a></td>
+                    <td><a href="/products/{{ product.id }}" class="btn btn-dark btn-sm">Mehr</a></td>
                 </tr>
             {% endfor %}
             </tbody>
@@ -31,5 +32,4 @@
         <button class="btn btn-primary">Neu</button>
     </a>
     {% endif %}
-
 {% endblock body %}
