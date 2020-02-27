@@ -20,7 +20,7 @@ class IncomingProductRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return IncomingDelivery[] Returns an array of IncomingDelivery objects
+    //  * @return IncomingDeliveryController[] Returns an array of IncomingDeliveryController objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class IncomingProductRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?IncomingDelivery
+    public function findOneBySomeField($value): ?IncomingDeliveryController
     {
         return $this->createQueryBuilder('i')
             ->andWhere('i.exampleField = :val')

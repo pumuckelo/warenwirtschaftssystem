@@ -97,4 +97,10 @@ class Product
 
         return $this;
     }
+
+    //Function that returns the name of the product so we can use it as a foreign key in Deliveries
+    public function __toString()
+    {
+        return $this->name;
+    }
 }

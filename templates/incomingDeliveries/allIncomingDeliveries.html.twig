@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block title %}Neue Eingehende Lieferung {% endblock title %}
+{% block body %}
+
+
+    <h1>Eingehende Lieferungen</h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Produkt</th>
+            <th>Anzahl</th>
+            <th>In Lieferung</th>
+            <th>Aktionen</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for delivery in deliveries %}
+            <tr>
+                <td>{{  }}</td>
+                <td>{{ }}</td>
+                <td></td>
+                <td><a href="//{{ }}" class="btn btn-dark btn-sm">Mehr</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock body %}

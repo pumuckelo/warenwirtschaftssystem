@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block title %}Neue Eingehende Lieferung {% endblock title %}
+{% block body %}
+    <h1>Neue Eingehende Lieferung</h1>
+
+    {{ form_start(form) }}
+    
+    {{ form_row(form.invoiceNumber) }}
+    {{ form_row(form.product) }}
+    {{ form_row(form.quantity) }}
+    {{ form_row(form.receiptDate) }}
+    <div class="d-flex justify-content-between mt-2">
+        <a class="btn btn-outline-primary" href="{{ path('incomingDelivery_all') }}">Zurück</a>
+        {{ form_row(form.save) }}
+    </div>
+    {{ form_end(form) }}
+{% endblock body %}
