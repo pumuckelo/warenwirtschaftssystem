@@ -8,7 +8,7 @@
 
 
         <button class="btn btn-danger d-block mb-2" data-toggle="modal" data-target="#deleteModal">Löschen</button>
-        <!-- Modal -->
+        <!-- Modal for deleting the Project -->
         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -21,10 +21,11 @@
                     <div class="modal-body">
                         Wollen Sie "{{ product.name }}" wirklich Löschen?
                     </div>
+{#                    The Delete Button has the product id as an data attribute#}
                     <div class="modal-footer">
 
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
-                            <button id="deleteConfirmButton" type="submit" class="btn btn-danger">Löschen</button>
+                            <button data-productId="{{ product.id }}" id="deleteConfirmButton" type="submit" class="btn btn-danger">Löschen</button>
 
 
                     </div>
@@ -34,3 +35,6 @@
         <a href="/" class="mt-2">Zurück</a>
     {% endif %}
 {% endblock body %}
+ {% block javascripts %}
+     <script src="{{ asset('js/products/viewProduct.js') }}"></script>
+ {% endblock %}
