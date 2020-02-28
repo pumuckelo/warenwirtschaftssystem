@@ -2,14 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="732ff30a-eda0-4a21-b49b-cd8814f2f139" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/IncomingDeliveryController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/incomingDeliveries/allIncomingDeliveries.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/incomingDeliveries/newIncomingDelivery.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/outgoingDeliveries/allOutgoingDeliveries.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/IncomingProduct.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/OutgoingProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OutgoingDeliveryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/IncomingDeliveryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/IncomingDeliveryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/OutgoingDeliveryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OutgoingDeliveryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/IncomingDelivery.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/IncomingDelivery.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/IncomingProductRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/IncomingProductRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/include/navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/include/navbar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/incomingDeliveries/allIncomingDeliveries.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/incomingDeliveries/allIncomingDeliveries.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/incomingDeliveries/newIncomingDelivery.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/incomingDeliveries/newIncomingDelivery.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/products/editProduct.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/editProduct.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/products/viewProduct.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/viewProduct.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +146,7 @@
       <workItem from="1582746322706" duration="51000" />
       <workItem from="1582746427804" duration="2380000" />
       <workItem from="1582749568128" duration="289000" />
-      <workItem from="1582750216132" duration="29857000" />
+      <workItem from="1582750216132" duration="37752000" />
     </task>
     <servers />
   </component>
@@ -192,10 +197,14 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="336" y="169" key="com.intellij.ide.util.TipDialog/0.0.1280.689@0.0.1280.689" timestamp="1582750301923" />
-    <state x="297" y="153" width="672" height="677" key="run.anything.popup" timestamp="1582784068129">
+    <state x="0" y="0" width="751" height="689" key="find.popup" timestamp="1582849419815">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="297" y="153" width="672" height="677" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1582784068129" />
+    <state x="0" y="0" width="751" height="689" key="find.popup/0.0.1280.689@0.0.1280.689" timestamp="1582849419815" />
+    <state x="297" y="153" width="672" height="677" key="run.anything.popup" timestamp="1582849881833">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="297" y="153" width="672" height="677" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1582849881833" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

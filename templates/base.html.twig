@@ -6,7 +6,11 @@
         {% block stylesheets %}{% endblock %}
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 {#        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">#}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/litera/bootstrap.min.css">
+{#        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/litera/bootstrap.min.css">#}
+{#        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/materia/bootstrap.min.css">#}
+{#        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.13.0/css/mdb.min.css" rel="stylesheet">#}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css">
+{#        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/lux/bootstrap.min.css">#}
         <style>
             body {
                 font-family: 'Roboto' ;
@@ -20,7 +24,7 @@
     <body>
 
     {{ include('include/navbar.html.twig') }}
-    <div class="container">  {% block body %}{% endblock %}</div>
+    <div class="container mb-4">  {% block body %}{% endblock %}</div>
 
         {% block javascripts %}{% endblock %}
 

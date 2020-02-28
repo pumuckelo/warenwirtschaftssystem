@@ -1,18 +1,47 @@
 {% extends 'base.html.twig' %}
 {% block title %}{{ product.name }}{% endblock title %}
-{% block body%}
+{% block body %}
     {% if product %}
-    <h1> {{ product.name }}</h1>
-    <p>Quantity: <span>{{ product.quantity }}</span></p>
+        <h2> {{ product.name }}</h2>
+        <ul class="list-group">
+            <li class="list-group-item"><h6>Anzahl: </h6> <span>{{ product.quantity }}</span></li>
+            <li class="list-group-item"><h6>Eingehende Lieferungen</h6>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Rechnungsnummer</th>
+                        <th>Anzahl</th>
+                        <th>Datum</th>
+                        <th>Aktionen</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for incomingDelivery in incomingDeliveries %}
+                        <tr>
+                            <td>{{ incomingDelivery.invoiceNumber }}</td>
+                            <td>{{ incomingDelivery.quantity }}</td>
+                            <td>{{ incomingDelivery.receiptDate.format('d.m.Y H:i') }}</td>
+                            <td>Bald verfügbar</td>
+                            {#                    <td><a href="/products/{{ product.id }}" class="btn btn-dark btn-sm">Mehr</a></td>#}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </li>
+        </ul>
 
 
-        <div class="d-flex justify-content-between mb-2">
+
+
+
+        <div class="d-flex justify-content-between mb-2 mt-2">
             <a class="btn btn-primary" href="/products/{{ product.id }}/edit">Bearbeiten</a>
             <button class="btn btn-danger d-block" data-toggle="modal" data-target="#deleteModal">Löschen</button>
         </div>
 
         <!-- Modal for deleting the Project -->
-        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -24,18 +53,20 @@
                     <div class="modal-body">
                         Wollen Sie "{{ product.name }}" wirklich Löschen?
                     </div>
-{#                    The Delete Button has the product id as an data attribute#}
+                    {#                    The Delete Button has the product id as an data attribute#}
                     <div class="modal-footer">
 
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
-                            <button data-productId="{{ product.id }}" id="deleteConfirmButton" type="submit" class="btn btn-danger">Löschen</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
+                        <button data-productId="{{ product.id }}" id="deleteConfirmButton" type="submit"
+                                class="btn btn-danger">Löschen
+                        </button>
 
 
                     </div>
                 </div>
             </div>
         </div>
-        <a href="/" class="mt-2">Zurück</a>
+        <a href="{{ path('product_list') }}" class="mt-2">Zurück</a>
     {% endif %}
 {% endblock body %}
  {% block javascripts %}

@@ -31,6 +31,7 @@ class Product
 
     /**
      * @ORM\OneToMany(targetEntity="IncomingDelivery", mappedBy="product")
+     * @ORM\JoinColumn(name="incoming_deliveries", referencedColumnName="id")
      */
     private $incomingDeliveries;
 
@@ -96,6 +97,14 @@ class Product
         }
 
         return $this;
+    }
+
+    public function addQuantity(int $quantity){
+        $this->quantity += $quantity;
+    }
+
+    public function removeQuantity(int $quantity){
+        $this->quantity -= $quantity;
     }
 
     //Function that returns the name of the product so we can use it as a foreign key in Deliveries

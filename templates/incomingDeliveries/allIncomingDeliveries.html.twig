@@ -3,23 +3,27 @@
 {% block body %}
 
 
-    <h1>Eingehende Lieferungen</h1>
+    <h1>Eingegangene Lieferungen</h1>
+    <a class="btn btn-primary mb-2" href="{{ path('incomingDelivery_new') }}">Neue Lieferung</a>
     <table class="table table-striped">
         <thead>
         <tr>
+            <th>Rechnungsnummer</th>
             <th>Produkt</th>
             <th>Anzahl</th>
-            <th>In Lieferung</th>
+            <th>Datum</th>
             <th>Aktionen</th>
         </tr>
         </thead>
         <tbody>
-        {% for delivery in deliveries %}
+        {% for delivery in incomingDeliveries %}
             <tr>
-                <td>{{  }}</td>
-                <td>{{ }}</td>
-                <td></td>
-                <td><a href="//{{ }}" class="btn btn-dark btn-sm">Mehr</a></td>
+                <td>{{ delivery.invoiceNumber }}</td>
+                <td>{{ delivery.product }}</td>
+                <td>{{ delivery.quantity }}</td>
+                <td>{{ delivery.receiptDate.format('d.m.Y H:i') }}</td>
+{#                <td></td>#}
+                <td><a href="#" class="btn btn-dark btn-sm">Bald verfügbar</a></td>
             </tr>
         {% endfor %}
         </tbody>

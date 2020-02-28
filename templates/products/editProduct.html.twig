@@ -4,13 +4,16 @@
 <h1>Produkt bearbeiten</h1>
 
 {#   Render the form that we passed to the template, form_widget is the actual form view #}
-    {{ form_start(form) }}
-    {{ form_row(form.name) }}
-    {{ form_row(form.quantity) }}
-    <div class="d-flex mt-2 justify-content-between">
-        <a class="btn btn-outline-primary" href="/products">Abbrechen</a>
-        {{ form_row(form.save) }}
+    <div class="md-form">
+        {{ form_start(form) }}
+        {{ form_row(form.name) }}
+        {{ form_row(form.quantity) }}
+        <div class="d-flex mt-2 justify-content-between">
+            <a class="btn btn-outline-primary" href="/products">Abbrechen</a>
+            {{ form_row(form.save) }}
+        </div>
     </div>
+
 
     {{ form_end(form) }}
 {% endblock body %}

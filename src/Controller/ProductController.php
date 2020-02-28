@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 
+use App\Entity\IncomingDelivery;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
@@ -19,6 +20,7 @@ class ProductController extends AbstractController
 
     /**
      * @Route("/products", name="product_list")
+     * @Route("/")
      */
     public function index()
     {
@@ -70,6 +72,7 @@ class ProductController extends AbstractController
 
             $product = new Product();
             $form = $this->createProductForm($product);
+            return $this->redirectToRoute('product_list');
         }
 
 
@@ -127,7 +130,12 @@ class ProductController extends AbstractController
     public function view($id)
     {
         $product = $this->getDoctrine()->getRepository(Product::class)->find($id);
-        return $this->render('/products/viewProduct.html.twig', array('product' => $product));
+
+
+        //Get all the incomingDeliveries for that product
+        $incomingDeliveries = $this->getDoctrine()->getRepository(IncomingDelivery::class)->findBy(['product'=> $id]);
+
+        return $this->render('/products/viewProduct.html.twig', array('product' => $product, 'incomingDeliveries'=>$incomingDeliveries));
     }
 }
 
